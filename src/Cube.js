@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 import * as three from 'three'; //what does that mean//use three js as es6 import?
 import './Cube.css'
 
+
+
 class Cube extends Component {
     componentDidMount(){
         const {width, height} = this.props;
@@ -30,12 +32,14 @@ class Cube extends Component {
 
             renderer.render(scene, camera);
         }
-
         animationUpdate();
     }
+
+
+
     render() {
         const{width, height} = this.props;
-        return  <div ref="anchor" style={{width, height, margin:'0 auto'}} />
+        return  <div ref="anchor" style={{width: width, height:height, margin:'0 auto'}} />
     }
 }
 
