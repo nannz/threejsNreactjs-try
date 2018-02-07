@@ -2,9 +2,8 @@
  * Created by zhaonan on 2018/2/6.
  */
 import React, { Component } from 'react';
-import * as three from 'three'; //what does that mean
-//use three js as es6 import?
-
+import * as three from 'three'; //what does that mean//use three js as es6 import?
+import './Cube.css'
 
 class Cube extends Component {
     componentDidMount(){
@@ -24,11 +23,19 @@ class Cube extends Component {
 
         camera.position.z = 5;
 
-        renderer.render(scene, camera);
+        function animationUpdate(){
+            requestAnimationFrame(animationUpdate); //call itself
+            cube.rotation.x += 0.1;
+            cube.rotation.y += 0.1;
+
+            renderer.render(scene, camera);
+        }
+
+        animationUpdate();
     }
     render() {
         const{width, height} = this.props;
-        return  <div ref="anchor" style={{width, height}}/>
+        return  <div ref="anchor" style={{width, height, margin:'0 auto'}} />
     }
 }
 

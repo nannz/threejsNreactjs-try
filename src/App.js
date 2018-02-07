@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <div className="App">
                 <p>
-                    hello.
+                    Here is a rotating cube!
                 </p>
                 <Cube width = {800} height = {600}/>
             </div>
